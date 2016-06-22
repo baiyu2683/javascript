@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <title>inherit</title>
+        <meta charset="utf-8" />
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <script>
+         var o = {x:"don't change this value"};
+         var temp = inherit(o);
+         console.info(temp.x);
+         temp.x = "I have changed x";
+         console.info(temp.x);
+         console.info(o.x);
+        </script>
+    </body>
+</html>
