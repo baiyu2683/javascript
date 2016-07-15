@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="5-7-3.js"></script>
+    </head>
+    <body>
+        switch:
+        <pre>
+function convert(x){
+    switch(typeof x){
+    case "undefined":
+        return "undefined";
+    case "string":
+        return "'" + x + "'";
+    case "number":
+        return x.toString(16);
+    }
+}
+        </pre>
+        user strict:
+        <pre>
+function hasStrictMode(){
+    "use strict";
+    return this === undefined;
+}
+
+alert(hasStrictMode());
+        </pre>
+    </body>
+</html>
