@@ -1,22 +1,9 @@
-function inherit(p){
-    if(p == null) throw TypeError();
-    if(Object.create)
-        return Object.create(p);
-    var t = typeof p;
-    if(t !== "object" && t !== "function") throw TypeError();
-    function f(){};
-    f.prototype = p;
-    return new f();
+function Range(from, to){
+    this.from = from;
+    this.to = to;
 }
 
-function range(from, to){
-    var r = inherit(range.methods);
-    r.from = from;
-    r.to = to;
-    return r;
-}
-
-range.methods={
+Range.prototype = {
     includes:function(x){
         return this.from <= x && x <= this.to;
     },
@@ -29,7 +16,7 @@ range.methods={
     }
 }
 
-var r = range(1, 4);
+var r =new Range(1, 4);
 console.log("--------------");
 console.log(r.includes(2));
 console.log("--------------");
