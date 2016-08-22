@@ -32,5 +32,3 @@ pattern.test('\n\s\r');//--->true
 
 
 //非贪婪的匹配
-
-
