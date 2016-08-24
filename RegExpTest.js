@@ -18,3 +18,12 @@ while((result = pattern.exec(text)) != null){
 
 //最后一次检索失败，返回null,并且将lastIndex归零
 
+//test,和exec一样, 可以循环用test依次匹配，exce返回null时，test返回false
+pattern.test(text)
+//true
+pattern.test(text)
+//true
+pattern.test(text)
+//false
+
+
