@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <script>
+         function displayTime(){
+             var elt = document.getElementById("clock");
+             var now = new Date();
+             elt.innerHTML = now.toLocaleTimeString();
+             setTimeout(displayTime, 1000);         //1s执行一次
+         }
+         window.onload = displayTime;
+        </script>
+        <style>
+         #clock{
+             font: bold 24pt sans;
+             background: #ddf;
+             padding: 10px;
+             border: solid black 2px;
+             border-radius: 10px;
+         }
+        </style>
+    </head>
+
+    <body>
+        <h1>Digital Clock</h1>
+        <span id ="clock"></span><!--显示时钟-->
+    </body>
+</html>
