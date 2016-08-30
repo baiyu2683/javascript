@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>测试IE兼容性</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <!--[if IE 6]>
+        This content is actually inside an HTML comment.
+        It will only be displayed in IE 6
+        <![endif]-->
+        <!--[if lte IE 7]>
+            This content will only be displayed by IE 5, 6 and 7 earlier.
+            lte stands for 'less than or equal'. You can also use 'lt', 'gt' and 'gte'.
+        <![endif]-->
+        <!--[if !IE]><-->
+            This is normal HTML content, but IE will not display it
+            because of the comment above and the comment below.
+        <!--><![endif]-->
+        <br  />
+        This is normal content, displayed by all browsers.
+    </body>
+</html>
