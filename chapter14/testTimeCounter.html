@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>test time counter</title>
+        <meta charset="utf-8" />
+    </head>
+    <script>
+     function invoke(f, start, interval, end){
+         if(!start) start = 0;
+         if(arguments.length <= 2){
+             setTimeout(f, start);
+         }else{
+             setTimeout(repeat, start);
+             function repeat(){
+                 var h = setInterval(f, interval);
+                 console.log(h);
+                 if(end) setTimeout(function(){clearInterval(h);}, end);
+             }
+         }
+     }
+     function print(){
+         console.log('print..');
+     }
+     window.onload = function(){
+         invoke(print, 5000, 2000, 20000);
+     };
+    </script>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <title>test time counter</title>
+        <meta charset="utf-8" />
+    </head>
+    <script>
+     //这里的alter永远不会弹出来
+     var t = true;     //复制
+     setTimeout(function(){ t = false; }, 100); //异步，0.1s之后执行，将t置为false;
+     while(t){}                   //无线循环，在settimeout之前执行，0.1s之后，达到了setTimeout的执行条件，其将时间放入执行队列，但是由于while先执行，需要while执行完毕之后才能执行，
+                                  //但是while永远执行不完。。。
+     alert("tips");
+    </script>
+    <body>
+    </body>
+</html>
+duilie
