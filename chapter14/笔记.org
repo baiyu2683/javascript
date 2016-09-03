@@ -9,7 +9,7 @@
 6. 有iframe子窗口时，其历史记录会按时间穿插在主窗口的历史记录中，有可能出现子窗口改变，主窗口不改变的情况
 
 * 14.4浏览器和屏幕信息
-** 14.4.1 Navigtator对象
+** 14.4.1 Navigator对象
 1. Window对象的navigator属性引用的是包含浏览器厂商和版本信息的Navigator对象昂。
 2. appName属性，IE时Microsoft Internet Explorer，其他浏览器是NetScape
 3. appVersion 通常已数字开始，包含浏览器厂商和版本信息，不能用此来判断浏览器版本
