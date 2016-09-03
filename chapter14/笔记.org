@@ -8,3 +8,18 @@
 5. go(num), 向后(num为负数)/向前(num为正数)跳num格
 6. 有iframe子窗口时，其历史记录会按时间穿插在主窗口的历史记录中，有可能出现子窗口改变，主窗口不改变的情况
 
+* 14.4浏览器和屏幕信息
+** 14.4.1 Navigtator对象
+1. Window对象的navigator属性引用的是包含浏览器厂商和版本信息的Navigator对象昂。
+2. appName属性，IE时Microsoft Internet Explorer，其他浏览器是NetScape
+3. appVersion 通常已数字开始，包含浏览器厂商和版本信息，不能用此来判断浏览器版本
+4. userAgent属性，浏览器在USER-AGENT HTTP头部发送的信息，通常包含appVersion的所有信息，以及其他的细节，
+   所以浏览器嗅探通常用这个属性来嗅探。。
+   chromium："Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/51.0.2704.79 Chrome/51.0.2704.79 Safari/537.36"
+5. platform属性，在其上运行浏览器的操作系统(可能是硬件)的字符串
+   linux mint 18:"Linux x86_64";
+6. [[file:testBrowser.js][根据userAgent嗅探浏览器]]
+7. onLine属性，表示浏览器是否链接到网络。
+8. geolocation属性， Geolocation对象定义用于确定用户地理位置信息的接口
+9. javaEnabled(), 一个非标准方法，当浏览器可以运行Java小程序时返回true
+10. cookieEnable,非标准方法，如果浏览器可以保存永久的cookie时，返回true，当cookie配置为‘是具体情况而定’时可能会返回不正确的值
