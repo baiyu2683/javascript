@@ -23,3 +23,6 @@
 8. geolocation属性， Geolocation对象定义用于确定用户地理位置信息的接口
 9. javaEnabled(), 一个非标准方法，当浏览器可以运行Java小程序时返回true
 10. cookieEnable,非标准方法，如果浏览器可以保存永久的cookie时，返回true，当cookie配置为‘是具体情况而定’时可能会返回不正确的值
+** 14.4.2 Screen对象
+1. Window对象的screen属性引用的是Screen对象.
+2. 提供有关窗口显示的大小和可用的颜色数量的信息
