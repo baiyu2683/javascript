@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="sortrows.js"></script>
+    </head>
+    <body>
+        <table id="mytable" style="text-align:center;" border="1">
+            <thead>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>zhangheng2</td>
+                    <td>zhangheng3</td>
+                    <td>zhangheng1</td>
+                    <td>zhangheng4</td>
+                </tr>
+                <tr>
+                    <td>zhangheng4</td>
+                    <td>zhangheng5</td>
+                    <td>zhangheng6</td>
+                    <td>zhangheng3</td>
+                </tr>
+                <tr>
+                    <td>zhangheng4</td>
+                    <td>zhangheng5</td>
+                    <td>zhangheng1</td>
+                    <td>zhangheng2</td>
+                </tr>
+                <tr>
+                    <td>zhangheng3</td>
+                    <td>zhangheng2</td>
+                    <td>zhangheng4</td>
+                    <td>zhangheng1</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            window.onload = function(){
+                var table = document.getElementById('mytable');
+                makeSortable(table);
+            }
+        </script>
+    </body>
+</html>

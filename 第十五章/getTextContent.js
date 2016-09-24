@@ -45,7 +45,3 @@ function upcase(n){
         }
     }
 }
-
-
-
-

@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
     </head>
     <body>
+        <a href="http://www.baidu.com" target="_blank">百度</a>
         <div id ="myid0">123</div>
         文字节点
         <div id="myid1">
@@ -17,5 +18,18 @@
                 </dl>
             </div>
         </div>
+        <script>
+         window.onload = function(){
+             //复制上面的链接
+             var a = document.getElementsByTagName('a')[0];
+             //cloneNode参数默认false(不传参数或传false)，执行浅复制，只包含当前标签，
+             //为true递归复制子节点
+             var aclone = a.cloneNode(true);
+             aclone.textContent = '百度克隆';
+             var body = document.body;
+             var myid0 = document.getElementById('myid0');
+             body.insertBefore(aclone, myid0);
+         };
+        </script>
     </body>
 </html>
