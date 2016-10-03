@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        Arrival Date: <input type="text" name="arrival" placeholder="yyyy-mm-dd">
+        <script>
+         window.onload = function(){
+             var arrival = document.getElementsByName('arrival')[0];
+             arrival.onchange = function(){
+                 console.log(this.value);
+             }
+         }
+        </script>
+    </body>
+</html>
