@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>测试text选取</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        文字:<input type="text" id="text1" value="123123"/>
+        <br/>
+        文章:<textarea id="area">sadflsadfljasdf</textarea>
+        <script>
+         window.onload = function(){
+             var text1 = document.getElementById('text1');
+             //选中
+             text1.select();
+             //选中方向
+             console.log(text1.selectionDirection);
+             //选中的文本
+             var txt = text1.value.substring(text1.selectionStart, text1.selectionEnd);
+             console.log(txt);
+         }
+        </script>
+    </body>
+</html>
