@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <form name="address">
+            <select name="country">
+                <option value="Beijing">北京</option>
+            </select>
+        </form>
+        <script>
+         //动态为select添加选项
+         //1, 专用的api，避免使用
+         //2，标准api
+         window.onload = function(){
+             //四个参数依次为:text属性，value属性，defaultSelected属性，selected属性
+             var zaire = new Option('Zaire', 'zaire', false, false);
+             var countries = document.address.country;
+             countries.options[countries.options.length] = zaire;
+
+             //使用标准api
+             var nanjing = document.createElement("option");
+             nanjing.value = 'nanjing';
+             nanjing.textContent = '南京';
+             var country = document.getElementsByName('country')[0];
+             country.appendChild(nanjing);
+         }
+        </script>
+    </body>
+</html>
