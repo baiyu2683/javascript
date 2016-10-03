@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <title>可编辑内容</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <!-- contenteditable -->
+        <div id="mydiv" contenteditable>
+            Click to edit
+        </div>
+
+        <iframe id="editor" src="about:blank"></iframe>
+        <script>
+         //document的designMode属性设置为‘on’使得整个文档可编辑，为off则回复为只读文档
+         window.onload = function(){
+             var editor = document.getElementById('editor');
+             editor.contentDocument.designMode = 'on';
+         }
+        </script>
+    </body>
+</html>
