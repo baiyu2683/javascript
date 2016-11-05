@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CSS显示窗口</title>
+        <meta charset="utf-8" />
+        <style type="text/css">
+         div.window {
+             position: absolute;
+             width: 300px; height: 200px;
+             border: 3px outset gray;
+         }
+         div.titlebar{
+             position: absolute;
+             top: 0px; height: 18px;
+             width: 290px;
+             background-color: #aaa;
+             border-botton: groove gray 2px;
+             font: bold 11pt sans-serif;
+         }
+         div.content{
+             position: absolute;
+             top: 25px;
+             height: 165px;
+             width: 290px;
+             padding: 5px;
+             overflow: auto;
+             background-color: #fff;
+         }
+         div.translucent{
+             opacity: .75;
+             filter: alpha(opacity=75);
+         }
+        </style>
+    </head>
+    <body>
+        <!--定义一个窗口： "window" dinv 有一个标题栏，其内是一个内容idv。注意，如何设置定位一个扩充了样式表的style属性 -->
+        <div class="window" style="left: 10px; top: 10px; z-index: 10;">
+            <div class="titlebar">
+            Test Window
+            </div>
+            <div class="content">
+                1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>0<br/>
+                1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>0<br/>
+            </div>
+        </div>
+        <!-- 定义另外一个窗口： 用不同的定位、颜色和字体重量 -->
+        <div class="window" style="left: 75px; top: 110px; z-index: 20;">
+            <div class="titlebar">Another Window</div>
+            <div class="content translucent" style="background-color:#ccc; font-weight:bold">
+                This is another window. Its <tt>z-index</tt> puts it on top of the other one.
+                CSS styles make its content area translucent, in brosers that support that.
+            </div>
+        </div>
+    </body>
+</html>
