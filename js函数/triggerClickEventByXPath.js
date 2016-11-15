@@ -18,7 +18,7 @@
 })("//div", 2);
 
 
-(function(xpath, index){
+(function(xpath){
     var evaluator = new XPathEvaluator();
     var result = evaluator.evaluate(xpath, document.documentElement, null,XPathResult.FIRST_ORDERED_NODE_TYPE, null);
     if(result !== null){
