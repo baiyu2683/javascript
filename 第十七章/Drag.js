@@ -58,7 +58,7 @@ function drag(elementToDrag, event){
         //注销捕获事件处理程序
         if(document.removeEventListener) {
             document.removeEventListener("mouseup", upHandler, true);
-            document.removeEventListener("mousemove", moveHandler, true);
+            document.removeEventListener("mousemove", mhttp://spacemacs.org/news/news01.htmloveHandler, true);
         }
         else if(document.detachEvent){
             elementToDrag.detachEvent("onlosecapture", upHandler);
