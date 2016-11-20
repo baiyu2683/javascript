@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="whenReady.js"></script>
+        <script type="text/javascript" src="InputFilter.js"></script>
+        <script type="text/javascript" src="forceToUpperCase.js"></script>
+    </head>
+    <body>
+        邮政编码:<input id="zip" data-allowed-chars="0123456789" data-messageid="zipwarn" type="text">
+        <span id="zipwarn" style="color:red;visibility:hidden">只支持数字</span>
+        <br>
+        所有字母都变大写:<input id="upcase" type="text" name="upcase">
+        <script>
+         whenReady(function(){
+             forceToUpperCase("upcase");
+         });
+        </script>
+    </body>
+</html>
