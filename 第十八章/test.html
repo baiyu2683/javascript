@@ -4,8 +4,26 @@
         <title></title>
         <meta charset="utf-8" />
         <script type="text/javascript" src="getText.js"></script>
+        <script type="text/javascript" src="../第十七章/whenReady.js"></script>
     </head>
     <body>
-       <input type="button" name="button" value="button" onclick="getText()">
+        <input type="button" name="button" value="button" onclick="getText()">
+        <br>
+        <input type="button" name="button" value="button" onclick="getXML()">
+        <p id ="tips">下面是得到的xml文档内容:</p>
+        <script>
+         function getXML(){
+             var request = new XMLHttpRequest();
+             request.open("GET","http://localhost:9006/test/getXML");
+             request.onreadystatechange = function() {
+                 if (request.readyState === 4 && request.status === 200) {
+                     var responseContent = request.responseXML;
+                     var ele = document.getElementById("tips");
+                     ele.insertAdjacentElement("afterend", responseContent);
+                 }
+             };
+             request.send(null);//立即发送请求
+         }
+        </script>
     </body>
 </html>
