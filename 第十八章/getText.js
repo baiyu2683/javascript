@@ -37,3 +37,31 @@ function getTextSync(url) {
 
     return request.responseText;
 }
+
+
+//发起HTTP GET响应以获取指定URL的内容
+//当响应到达时，把他以解析后的XML Document对象、解析后的JSON对象
+//或字符串的形式传递给回调函数
+function get(url, callback){
+    var request = new XMLHttpRequest();
+    request.open("GET", url);
+
+    request.onreadystatechange = function() {
+        //如果请求完成
+        if(request.readyState === 4 && request.status === 200) {
+            //获得响应类型
+            var type = request.getResponseHeader("Content-Type");
+            //检查类型，这样我们能在将来得到HTML文档
+            if(type.indexOf("xml") != -1 && request.responseXML) {
+                callback(request.responseXML);
+            }
+            else if(type === "application/json"){
+                callback(JSON.parse(request.responseText));//json响应
+            }
+            else {
+                callback(request.responseText);
+            }
+        }
+    };
+    request.send(null);
+}
