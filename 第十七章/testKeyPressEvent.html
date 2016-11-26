@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="whenReady.js"></script>
+    </head>
+    <body>
+        <input id="username" type="text" placeholder="用户名">
+        <script>
+         whenReady(function(){
+             //中文输入法回车空格确认输入内容时，都不会触发keypress事件
+             document.getElementById("username").addEventListener("keypress", function(event){
+                 if(event.keyCode) {
+                     //String.fromCharCode将字符的Unicode编码转换成真正的字符
+                     var char = String.fromCharCode(event.keyCode);
+                     console.info("keyCode: %s", char);
+                 } else if(event.charCode) {
+                     var char = String.fromCharCode(event.charCode);
+                     console.info("charCode: %s", char);
+                 }
+             });
+         });
+        </script>
+    </body>
+</html>

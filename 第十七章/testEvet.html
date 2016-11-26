@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+      <title>测试事件</title>
+      <meta charset="utf-8"/>
+  </head>
+  <body>
+      <form id="myForm">
+          <input type="text" name="userName" placeholder="请输入文字"/>
+          <input type="submit" name="submit" value="提交" onclick="clickButton();"/>
+      </form>
+      <script>
+       //不惯用。。。暂时不知道怎么写才能禁止提交事件
+       function clickButton(){
+           console.info("userName:" + myForm.userName.value);
+           console.info("%c点击了按钮", "color:red");
+           return false;
+       }
+      </script>
+  </body>
+</html>

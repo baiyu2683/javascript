@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>测试鼠标滚轮事件</title>
+        <meta charset="utf-8" />
+        <script src="whenReady.js"></script>
+        <script src="Enclose.js"></script>
+        <style>
+         div.enclosure {
+             border: solid black 10px;
+             margin: 10px;
+         }
+        </style>
+    </head>
+    <body>
+        <script>
+         whenReady(function(){
+            enclose(document.getElementById("content"), 400, 200, -200, -300);
+         });
+        </script>
+        <img id="content" src="testimage1.jpg"/>
+    </body>
+</html>
