@@ -6,6 +6,7 @@
         <script type="text/javascript" src="getText.js"></script>
         <script type="text/javascript" src="../第十七章/whenReady.js"></script>
         <script type="text/javascript" src="uploadFile.js"></script>
+        <script type="text/javascript" src="linkdetails.js"></script>
     </head>
     <body>
         <input type="button" name="button" value="button" onclick="getText()">
@@ -13,6 +14,10 @@
         <input type="button" name="button" value="button" onclick="getXML()">
         <p id ="tips">下面是得到的xml文档内容:</p>
         <input type="file" name="file" data-uploadto="http://localhost:9005/crawlPointTimeliness/weixin/testRequest" />
+        <a href="http://www.baidu.com/" title="百度">百度</a>
+        <a href="http://www.sina.com.cn/">新浪</a>
+        <a href="http://www.163.com/">网易163邮箱</a>
+        <a href="http://localhost:9005/crawlPointTimeliness/weixin/test3">本地测试</a>
         <script>
          function getXML(){
              var request = new XMLHttpRequest();

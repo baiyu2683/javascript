@@ -8,8 +8,8 @@ function timedGetText(url, timeout, callback) {
     },timeout);
     request.opend("GET", url);
     request.onreadystatechange = function() {
-        if(request.readyState !== 4) return; //忽略未完成, abort会触发onreadystatechange
-        if(isTimeout) return;
+        if(request.readyState !== 4) return; //忽略未完成
+        if(isTimeout) return; //abort会触发onreadystatechange
         clearTimeout(timer); //取消超时等待
         if(request.status === 200 && callback) {
             callback(request.responseText);
