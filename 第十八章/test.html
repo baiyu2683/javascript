@@ -5,12 +5,14 @@
         <meta charset="utf-8" />
         <script type="text/javascript" src="getText.js"></script>
         <script type="text/javascript" src="../第十七章/whenReady.js"></script>
+        <script type="text/javascript" src="uploadFile.js"></script>
     </head>
     <body>
         <input type="button" name="button" value="button" onclick="getText()">
         <br>
         <input type="button" name="button" value="button" onclick="getXML()">
         <p id ="tips">下面是得到的xml文档内容:</p>
+        <input type="file" name="file" data-uploadto="http://localhost:9005/crawlPointTimeliness/weixin/testRequest" />
         <script>
          function getXML(){
              var request = new XMLHttpRequest();
