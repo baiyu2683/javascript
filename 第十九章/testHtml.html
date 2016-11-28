@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jquery测试</title>
+        <meta charset="utf-8" />
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    </head>
+    <body>
+        <p class="detail">张恒测试张恒测试</p>
+        <p class="overview1">测试张恒测试张恒</p>
+        <p class="detail">测试张恒测试张恒</p>
+        <p class="detail">测试张恒测试张恒</p>
+        <p class="detail">测试张恒测试张恒</p>
+        <p class="clicktohide">测试张恒<br>测试张恒</p>
+        <script>
+         $(function(){
+             $("p.detail").css("background-color", "yellow").show("fast");
+             $(".clicktohide").click(function(event){
+                 $(this).slideUp("slow");
+             });
+         })
+        </script>
+    </body>
+</html>
