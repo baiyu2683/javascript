@@ -49,8 +49,8 @@ whenReady(function() {
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", url);
                 var body = new FormData();
-                for(var i = 0; i < files.length; i++) {
-                    body.append(i, files[i]);
+                for(var j = 0; j < files.length; j++) {
+                    body.append(j, files[j]);
                 }
                 xhr.upload.onprogress = function(e) {
                     if(e.lengthComputable) {
@@ -67,6 +67,6 @@ whenReady(function() {
                 return false;
             }
             target.classList.remove("wantdrop");
-        }
+        };
     }
 });
