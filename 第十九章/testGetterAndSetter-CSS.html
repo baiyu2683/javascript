@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <title>获取和设置css属性</title>
+        <meta charset="utf-8" />
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    </head>
+    <body>
+        <h1>zhangheng</h1>
+        <h2>zhangheng</h2>
+        <h3>zhangheng</h3>
+        <h4>zhangheng</h4>
+        <h1>lisi</h1>
+        <h2>lisi</h2>
+        <h3>lisi</h3>
+        <h4>lisi</h4>
+        <h1>wangwu</h1>
+        <h2>wangwu</h2>
+        <h3>wangwu</h3>
+        <h4>wangwu</h4>
+        <br>
+        <div class="note">测试div</div>
+        <script>
+         $(function(){
+             var firstH1Font = $("h1").css("font-weight"); //获取第一个<h1>的字体重量
+             var firstH1FontOther = $("h1").css("fontWeight");
+             console.info("fontWeight:%c, fontWeight:%c", firstH1Font, firstH1FontOther);
+             $("h1").css("font-varient","smallcaps");
+             $("div.note").css("border", "solid black 2px");
+             $("h1").css({backgroundColor: "purple",          //一次设置多个样式
+                          color: "white",
+                          fontVariant: "small-caps",
+                          padding: "10px 2px 4px 20px",
+                          border: "dotted black 4px"});
+             $("h1").css("font-size", function(i, curval){
+                 console.info("i:%d, curval:%s", i, curval);
+                 return Math.round(1.25*parseInt(curval));
+             });
+         })
+        </script>
+    </body>
+</html>
