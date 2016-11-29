@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jquery测试</title>
+        <meta charset="utf-8" />
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    </head>
+    <body>
+        <p class="detail">张恒测试张恒测试</p>
+        <p class="overview1">测试张恒测试张恒</p>
+        <p class="detail">测试张恒测试张恒</p>
+        <p class="detail">测试张恒测试张恒</p>
+        <p class="detail">测试张恒测试张恒</p>
+        <p class="clicktohide">测试张恒<br>测试张恒</p>
+        <a href="http://www.baidu.com">百度</a>
+        <a href="http://www.sina.com.cn">新浪</a>
+        <br>
+        <img id="banner" src="//"><br>
+        <form name="myForm" action="/">
+        用户名:<input type="text" name="username"/><br>
+            密码:<input type="password" name="password"/><br>
+            <input type="submit" name="提交" value="提交"/><br>
+        </form>
+        <script>
+         $(document).ready(function(){
+             console.info($("form").attr("action"));
+             $("form").attr("action", "www.baidu.com");//设置
+             //http://a.hiphotos.baidu.com/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=e4d98494a2c27d1eb12b33967abcc60b/b3fb43166d224f4a104245230ff790529822d122.jpg"/>
+             //用一个对象设置值
+             $("#banner").attr({src:"http://a.hiphotos.baidu.com/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=e4d98494a2c27d1eb12b33967abcc60b/b3fb43166d224f4a104245230ff790529822d122.jpg",
+                                alt:"c.c",
+                                width:535, height:800});
+             //设置一个属性的值
+             $("a").attr("target", "_blank");
+             //用一个函数设置值，满足一定条件返回一定的值
+             $("a").attr("target", function(){
+                 if(this.host === location.host){
+                     return "_self";
+                 } else {
+                     return "_blank";
+                 }
+             });
+             //这种方式与上面的方式一样，属性值时一个函数的返回值
+             $("a").attr({"target":function(){
+                 console.info("this.host:%c", this.host);
+                 if(this.host === location.host){
+                     return "_self";
+                 } else {
+                     return "_blank";
+                 }
+             }});
+             //删除一个属性
+             //$("a").removeAttr("target");
+         });
+        </script>
+    </body>
+</html>
