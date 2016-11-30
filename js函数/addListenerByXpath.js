@@ -1,23 +1,22 @@
 (function(xpath) {
 	  var evaluator = new XPathEvaluator();
 	  var result = evaluator.evaluate(xpath, document.documentElement, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-
-	  function handler(event) {
-		    event.stopPropagation();
-		    var target = event.target;
-		    if (target && target.value && window.bridge) {
-			      if (target.type && target.type === "submit") {
-				        target.onblur = null;
-				        return;
-			      }
-			      bridge.getInput(xpath, target.toLocaleString());
-		    }
-		    target.onblur = null;
-	  }
-	  if (result) {
+	  if (result && window.blurEventHandler) {
 		    var node = result.singleNodeValue;
-		    if ((node.tagName === "INPUT" || node.tagName == "TEXTAREA") && (typeof node.onblur !== "function")) {
-			      node.onblur = handler;
-		    }
+        node.xpath = xpath;
+		    node.removeEventListener("blur", window.blurEventHandler, false);
+        node.addEventListener("blur", window.blurEventHandler, false);
 	  }
 })("$1");
+
+(function(){
+    if(!window.blurEventHandler){
+        window.blurEventHandler = function (event) {
+		        event.stopPropagation();
+		        var target = event.target;
+		        if (target && target.value && window.bridge) {
+			          window.bridge.getInput(target.xpath, target.value);
+		        }
+        };
+    }
+})();
