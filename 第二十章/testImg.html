@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <title>鼠标移动到图片上时图片改变</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <script>(new Image()).src="http://g.hiphotos.baidu.com/baike/c0%3Dbaike72%2C5%2C5%2C72%2C24/sign=259aae64dcc451dae2fb04b9d7943903/730e0cf3d7ca7bcb3409f115bf096b63f624a89d.jpg"</script>
+        <!-- mouseover和mouseout事件会传播 -->
+        <img src="1.gif" onmouseover="this.src='http://g.hiphotos.baidu.com/baike/c0%3Dbaike72%2C5%2C5%2C72%2C24/sign=259aae64dcc451dae2fb04b9d7943903/730e0cf3d7ca7bcb3409f115bf096b63f624a89d.jpg'" onmouseout="this.src='1.gif'">
+        <br>
+        <!-- mouseenter和mouseleave事件不会传播 -->
+        <img src="3.jpg" onmouseenter="this.src='4.jpg'" onmouseleave="this.src='3.jpg'">
+    </body>
+</html>
