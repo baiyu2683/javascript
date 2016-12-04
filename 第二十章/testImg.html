@@ -3,6 +3,8 @@
     <head>
         <title>鼠标移动到图片上时图片改变</title>
         <meta charset="utf-8" />
+        <script type="text/javascript" src="onLoad.js"></script>
+        <script type="text/javascript" src="rollover.js"></script>
     </head>
     <body>
         <script>(new Image()).src="http://g.hiphotos.baidu.com/baike/c0%3Dbaike72%2C5%2C5%2C72%2C24/sign=259aae64dcc451dae2fb04b9d7943903/730e0cf3d7ca7bcb3409f115bf096b63f624a89d.jpg"</script>
@@ -11,5 +13,7 @@
         <br>
         <!-- mouseenter和mouseleave事件不会传播 -->
         <img src="3.jpg" onmouseenter="this.src='4.jpg'" onmouseleave="this.src='3.jpg'">
+        <br>
+        <img src="1.gif" data-rollover="http://c.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=fb9618aa3adbb6fd3156ed74684dc07d/0b46f21fbe096b635c68f2010f338744ebf8ac6a.jpg" alt="图片">
     </body>
 </html>
