@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>text()和html()</title>
+        <meta charset="utf-8" />
+        <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- 这是第一个段落 -->
+        <p id="myP">张恒<br>hahahahah</p><br>
+        hahahahh
+        <!-- 这是第一个列表 -->
+        <br>
+        <ul id="myUl">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <br>
+        <p>下面时用jquery获得的内容</p>
+        <script>
+         $(function(){
+             var myP = $("#myP");
+             var container = document.createElement("xmp");
+             container.textContent = "text():" + myP.text(); //获得p的文本，不包含html标签
+             var br = document.getElementById("myP").nextElementSibling;
+             br.insertAdjacentElement("afterend",container);
+             container.insertAdjacentHTML("afterend", "<xmp>html():" + myP.html() + "</xmp>"); //html()方法获得所有的内容包括html标签
+         })
+        </script>
+    </body>
+</html>
