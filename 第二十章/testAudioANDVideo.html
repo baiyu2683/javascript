@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>测试脚本化音频和视频</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <audio src="background_music.mp3" controls></audio>
+        <br>
+        <!-- 测试失败 -->
+        <!-- <video src="movie.mp4" width=320 height=240/> -->
+        <!-- 测试失败 -->
+        <!-- <video id ="movie" width="640" height="480" controls preload>
+             <source src="movie.webm" type="video/webm; codecs='vp8, vorbis'">
+             <source src="movie.mp4" type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'">
+             <object width="640" height="480" type="application/x-shockwave-flash" data="https://staticlive.douyucdn.cn/common/share/play.swf?room_id=20360">
+             <div>video element not supported and Flash plugin not installed.</div>
+             </object>
+             </video> -->
+        <script>
+         var a = new Audio();
+         if(a.canPlayType("audio/mp3")) {
+             a.src = "background_music.mp3";
+             a.play();
+             setTimeout(function(){
+                 a.pause();
+                 console.info("currentTime:%d", a.currentTime);
+                 console.info("played:%s", a.played.length);
+             }, 10000);
+         }
+        </script>
+    </body>
+</html>
