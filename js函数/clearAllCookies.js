@@ -7,4 +7,4 @@ function clearAllCookies() {
         var change = name + "=; max-age=0";
         document.cookie = change;
     }
-}
+};
