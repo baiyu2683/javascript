@@ -1,9 +1,9 @@
-var Operator = function(){}
+var Operator = function(){};
 Operator.prototype.get = function() {
     return {
-        "name":"zhangheng",
+        "name":"zhangheng"
     };
 };
 
 var operator = new Operator();
-console.info(operator.get().name)
+console.info(operator.get().name);

@@ -1,0 +1,27 @@
+{
+    "DOWNLOADER": "WEBDRIVER",
+    "NAME": "facebookusers",
+    "CHECK": "_$X_//span[@id='fb-timeline-cover-name']/text()",
+    "INTERVAL": "86400",
+    "TEMPLATE": {
+        "CUSTOMKEYS": [
+            {
+                "DBNAME": "facebookuser",
+                "IR_SITENAME": "facebook",
+                "IR_CHANNEL": "facebook",
+                "IR_GROUPNAME": "facebook",
+                "IR_AUTHORS": "_$X_//span[@id='fb-timeline-cover-name']/text()_$NULL_",
+                "IR_WORK": "_$X_//div[@data-pnref='work']/ul/li/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/a_$JOIN_;_$NULL_",
+                "IR_EDUCATE": "_$X_//div[@data-pnref='edu']/ul/li/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/a_$JOIN_;_$NULL_",
+                "IR_CURRENTCITY": "_$X_//li[@id='current_city']/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/span/a_$NULL_",
+                "IR_HOMEDOWN": "_$X_//li[@id='hometown']/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/span/a_$NULL_",
+                "IR_ABSTRACT": "_$X_//div[@id='pagelet_bio']//ul/li/div[1]/div[1]_$NULL_",
+                "IR_QUOTES": "_$X_//div[@id='pagelet_quotes']//ul/li/div[1]/div[1]/span_$NULL_",
+                "IR_FAVORITES": "_$X_//div[@id='favorites']//table/tbody//td[@class='data']//ul/li//a/div|//div[@id='favorites']//table/tbody[position()=last()]/tr[1]/td/div/span/a_$JOIN_;_$NULL_"
+            }
+        ],
+        "facebookusers": {
+            "DEPTH": "_$X_//div[@id='pagelet_people_same_name']/div[1]/div[2]/ul/li/div[1]/a[@href]/@href_$MAP_https://([\\w\\W]*?)\\.facebook.com|https://www.facebook.com"
+        }
+    }
+}
