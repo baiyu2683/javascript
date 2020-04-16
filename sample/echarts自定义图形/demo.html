@@ -1,0 +1,183 @@
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="./echarts.min.js"></script>
+    </head>
+    <body>
+        <div id="main" style="width: 1000px; height: 1000px"></div>
+        <script>
+            myChart = echarts.init(document.getElementById("main"))
+            customGeoJson = {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "id": "customShape",
+                        "properties": {
+                            "name": "自定义图形1"
+                        },
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [300, 0],
+                                    [300, 100],
+                                    [500, 100],
+                                    [500, 0]
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "id": "customShape",
+                        "properties": {
+                            "name": "自定义图形2"
+                        },
+                        "geometry": {
+                            "type": "Polygon",
+                            // 左下角坐标
+                            "coordinates": [
+                                [
+                                    [0, 0],
+                                    [90, 150],
+                                    [100, 300],
+                                    [300, 300],
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+            echarts.registerMap('customShape', customGeoJson);
+            option = {
+                tooltip: {
+                    show: true  
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                graphic: {
+                    elements: [
+                        {
+                            type: "image",
+                            style: {
+                                image: 'http://attach.bbs.miui.com/forum/201304/25/195151szk8umd8or8fmfa5.jpg',
+                                x: 0,
+                                y: 0,
+                                height: 300,
+                                width: 500,
+                            }
+                        }
+                    ]
+                },
+                geo: {
+                    map: 'customShape',
+                    left: 0,
+                    top: 0,
+                    width: 500,
+                    height: 300,
+                    roam: true,
+                    //左上，右下
+                    boundingCoords: [
+                        [0, 300],
+                        [500, 0]
+                    ]
+                },
+                series: [
+                    {
+                        name: '自定义图形',
+                        type: 'map',
+                        geoIndex: 0,
+                        data: [
+                            {
+                                name: "自定义图形1",
+                                value: 100,
+                            },
+                            {
+                                name: "自定义图形2",
+                                value: 200,
+                            },
+                            {
+                                name: "自定义图形3",
+                                value: 300
+                            }
+                        ]
+                    }
+                ]
+            };
+            myChart.setOption(option);
+            myChart.on("geoRoam", function(params) {
+                console.info(JSON.stringify(params))
+
+                myOption = myChart.getOption();
+
+                geo = myOption.geo[0]
+
+                // 图片按比例缩放
+                zoom = geo.zoom
+                imageOption = myOption.graphic[0].elements[0].style
+                // 图片初始的配置，缩放改变width和height，中心点改变x和y
+                initImageOption = {
+                    image: imageOption.image,
+                    x: 0,
+                    y: 0,
+                    width: 500,
+                    height: 300
+                }
+                // 初始中心点
+                initCenter = [initImageOption.width / 2, initImageOption.height / 2]
+
+                imageOption.width = initImageOption.width * zoom
+                imageOption.height = initImageOption.height * zoom
+                // 中心点处理
+                cx = geo.center[0]
+                cy = geo.center[1]
+
+                originX = params["originX"]
+                originY = params["originY"]
+                if (originX !== undefined && originY !== undefined) {
+                    // 按鼠标所在位置进行缩放
+                    incrementWidth = initImageOption.width * (1 - zoom);
+                    incrementHeight = initImageOption.height * (1 - zoom);
+                    imageOption.x = initImageOption.x + originX / initImageOption.width * incrementWidth
+                    imageOption.y = initImageOption.y + originY / initImageOption.height * incrementHeight
+                } else {
+                    imageOption.x = initCenter[0] - cx
+                    imageOption.y = cy - initCenter[1]
+                }
+                console.info(geo.aspectScale + "; " + JSON.stringify(geo))
+                console.info(JSON.stringify(imageOption))
+
+                myOption.graphic[0].elements[0].style = imageOption
+                myChart.setOption(myOption)
+            })
+        </script>
+    </body>
+</html>
