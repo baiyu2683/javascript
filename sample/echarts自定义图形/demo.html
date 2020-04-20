@@ -1,23 +1,3 @@
-
-<!--
-Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
-distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
-to you under the Apache License, Version 2.0 (the
-"License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing,
-software distributed under the License is distributed on an
-"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
-specific language governing permissions and limitations
-under the License.
--->
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -25,157 +5,367 @@ under the License.
         <script src="./echarts.min.js"></script>
     </head>
     <body>
-        <div id="main" style="width: 1000px; height: 1000px"></div>
+        <div id="main" style="width:80%; height: 80%"></div>
         <script>
-            myChart = echarts.init(document.getElementById("main"))
             customGeoJson = {
-                "type": "FeatureCollection",
-                "features": [
-                    {
-                        "type": "Feature",
-                        "id": "customShape",
-                        "properties": {
-                            "name": "自定义图形1"
-                        },
-                        "geometry": {
-                            "type": "Polygon",
-                            "coordinates": [
-                                [
-                                    [300, 0],
-                                    [300, 100],
-                                    [500, 100],
-                                    [500, 0]
-                                ]
-                            ]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "id": "customShape",
-                        "properties": {
-                            "name": "自定义图形2"
-                        },
-                        "geometry": {
-                            "type": "Polygon",
-                            // 左下角坐标
-                            "coordinates": [
-                                [
-                                    [0, 0],
-                                    [90, 150],
-                                    [100, 300],
-                                    [300, 300],
-                                ]
-                            ]
-                        }
-                    }
-                ]
-            }
-            echarts.registerMap('customShape', customGeoJson);
-            option = {
-                tooltip: {
-                    show: true  
-                },
-                toolbox: {
-                    show: true,
-                    feature: {
-                        saveAsImage: {
-                            show: true
-                        }
-                    }
-                },
-                graphic: {
-                    elements: [
+                    "type": "FeatureCollection",
+                    "features": [
                         {
-                            type: "image",
-                            style: {
-                                image: 'http://attach.bbs.miui.com/forum/201304/25/195151szk8umd8or8fmfa5.jpg',
-                                x: 0,
-                                y: 0,
-                                height: 300,
-                                width: 500,
+                            "type": "Feature",
+                            "properties": {
+                                "name": "区域1"
+                            },
+                            "geometry": {
+                                "type": "Polygon",
+                                "coordinates": [
+                                    [
+                                        [
+                                            629.0104064941406,
+                                            613.9791717529297
+                                        ],
+                                        [
+                                            646.0104064941406,
+                                            615.9791717529297
+                                        ],
+                                        [
+                                            643.0104064941406,
+                                            620.9791717529297
+                                        ],
+                                        [
+                                            669.0104064941406,
+                                            624.9791717529297
+                                        ],
+                                        [
+                                            672.0104064941406,
+                                            617.9791717529297
+                                        ],
+                                        [
+                                            695.0104064941406,
+                                            618.9791717529297
+                                        ],
+                                        [
+                                            729.0104064941406,
+                                            569.9791717529297
+                                        ],
+                                        [
+                                            728.0104064941406,
+                                            560.9791717529297
+                                        ],
+                                        [
+                                            682.0104064941406,
+                                            534.9791717529297
+                                        ],
+                                        [
+                                            629.0104064941406,
+                                            613.9791717529297
+                                        ]
+                                    ]
+                                ]
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "name": "区域2"
+                            },
+                            "geometry": {
+                                "type": "Polygon",
+                                "coordinates": [
+                                    [
+                                        [
+                                            685.0104064941406,
+                                            533.9791717529297
+                                        ],
+                                        [
+                                            729.0104064941406,
+                                            556.9791717529297
+                                        ],
+                                        [
+                                            745.0104064941406,
+                                            536.9791717529297
+                                        ],
+                                        [
+                                            766.0104064941406,
+                                            542.9791717529297
+                                        ],
+                                        [
+                                            776.0104064941406,
+                                            538.9791717529297
+                                        ],
+                                        [
+                                            789.0104064941406,
+                                            535.9791717529297
+                                        ],
+                                        [
+                                            804.0104064941406,
+                                            530.9791717529297
+                                        ],
+                                        [
+                                            819.0104064941406,
+                                            522.9791717529297
+                                        ],
+                                        [
+                                            825.0104064941406,
+                                            510.9791717529297
+                                        ],
+                                        [
+                                            811.0104064941406,
+                                            503.9791717529297
+                                        ],
+                                        [
+                                            817.0104064941406,
+                                            497.9791717529297
+                                        ],
+                                        [
+                                            801.0104064941406,
+                                            487.9791717529297
+                                        ],
+                                        [
+                                            793.0104064941406,
+                                            491.9791717529297
+                                        ],
+                                        [
+                                            780.0104064941406,
+                                            482.9791717529297
+                                        ],
+                                        [
+                                            685.0104064941406,
+                                            533.9791717529297
+                                        ]
+                                    ]
+                                ]
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "name": "区域3"
+                            },
+                            "geometry": {
+                                "type": "Polygon",
+                                "coordinates": [
+                                    [
+                                        [
+                                            343.0104064941406,
+                                            527.9791717529297
+                                        ],
+                                        [
+                                            386.0104064941406,
+                                            428.9791717529297
+                                        ],
+                                        [
+                                            281.0104064941406,
+                                            497.9791717529297
+                                        ],
+                                        [
+                                            343.0104064941406,
+                                            527.9791717529297
+                                        ]
+                                    ]
+                                ]
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "name": "标记1"
+                            },
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [
+                                    749.0104064941406,
+                                    511.9791717529297
+                                ]
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "name": "标记2"
+                            },
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [
+                                    331.0104064941406,
+                                    484.9791717529297
+                                ]
                             }
                         }
                     ]
-                },
-                geo: {
-                    map: 'customShape',
-                    left: 0,
-                    top: 0,
-                    width: 500,
-                    height: 300,
-                    roam: true,
-                    //左上，右下
-                    boundingCoords: [
-                        [0, 300],
-                        [500, 0]
-                    ]
-                },
-                series: [
-                    {
-                        name: '自定义图形',
-                        type: 'map',
-                        geoIndex: 0,
-                        data: [
-                            {
-                                name: "自定义图形1",
-                                value: 100,
-                            },
-                            {
-                                name: "自定义图形2",
-                                value: 200,
-                            },
-                            {
-                                name: "自定义图形3",
-                                value: 300
-                            }
-                        ]
-                    }
-                ]
-            };
+        }
+        element = document.getElementById("main")
+		echarts.registerMap('customShape', customGeoJson);
+		myChart = echarts.init(element)
+		option = {
+			tooltip: {
+				show: true
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true
+					}
+				}
+			},
+			graphic: {
+				elements: [
+					{
+						type: "image",
+						style: {
+                            image: "customimage.png",
+							x: 50,
+							y: 90,
+							width: 1399,
+							height: 758,
+						}
+					}
+				]
+			},
+			geo: {
+				map: 'customShape',
+				left: 50,
+				top: 90,
+				width: 1399,
+                height: 758,
+                roam: true,
+				//左上，右下
+				boundingCoords: [
+					[0, 758],
+					[1399, 0]
+				],
+				itemStyle: {
+					opacity: 0.5,
+					color: "#5B5B5B",
+					borderWidth: 6
+				},
+				emphasis: {
+					itemStyle: {
+						opacity: 0.5,
+						color: "#272727",
+						borderWidth: 6
+					}
+				}
+			},
+			series: [
+				{
+					name: '自定义图形',
+					type: 'map',
+					geoIndex: 0,
+					data: [
+						{
+							name: "区域1",
+							value: 100,
+						},
+						{
+							name: "区域2",
+							value: 200,
+						},
+						{
+							name: "区域3",
+							value: 300,
+						}
+					],
+					markPoint: {
+						data: [
+							{
+								name: "标记点1",
+								value: 4000,
+								coord: [681.0104064941406,584.9791717529297],
+							},
+							{
+								name: "标记点2",
+								value: 1000,
+								coord: [749.0104064941406, 511.9791717529297],
+							},
+							{
+								name: "标记点3",
+								value: 23000,
+								coord: [331.0104064941406,484.9791717529297],
+							}
+						]
+					}
+				}
+			]
+        };
+            // 获取div宽高
+            width = myChart.getWidth();
+            height = myChart.getHeight();
+            option.geo.width = width;
+            option.geo.height = height;
+            option.graphic.elements[0].style.width = width;
+            option.graphic.elements[0].style.height = height;
+            // 获取div宽高
             myChart.setOption(option);
+
+            // resize事件
+            window.onresize = function() {
+                myChart.resize()
+                myOption = myChart.getOption();
+                geo = myOption.geo[0]
+                geo.height = myChart.getHeight()
+                geo.width = myChart.getWidth()
+
+                imageOption = myOption.graphic[0].elements[0].style
+                imageOption.height = myChart.getHeight()
+                imageOption.width = myChart.getWidth()
+                myChart.setOption(myOption, true)
+            }
+
+            // geo拖拽、缩放事件
             myChart.on("geoRoam", function(params) {
-                console.info(JSON.stringify(params))
+                console.info("geoRoam事件: " + JSON.stringify(params))
 
                 myOption = myChart.getOption();
 
                 geo = myOption.geo[0]
+                backgroundImage = myOption.graphic[0].elements[0].style
 
-                // 图片按比例缩放
-                zoom = geo.zoom
-                imageOption = myOption.graphic[0].elements[0].style
-                // 图片初始的配置，缩放改变width和height，中心点改变x和y
-                initImageOption = {
-                    image: imageOption.image,
-                    x: 0,
-                    y: 0,
-                    width: 500,
-                    height: 300
+                // 初始位置， option中需要将geo和image设置为相同的位置
+                position = {
+                    left: 50,
+                    top: 90,
+                    width: 1399,
+                    height: 758,
                 }
-                // 初始中心点
-                initCenter = [initImageOption.width / 2, initImageOption.height / 2]
-
-                imageOption.width = initImageOption.width * zoom
-                imageOption.height = initImageOption.height * zoom
-                // 中心点处理
-                cx = geo.center[0]
-                cy = geo.center[1]
-
+                // 初始center
+                initCenter = [position.width / 2, position.height / 2]
+                console.info("initCenter: " + JSON.stringify(initCenter))
+                console.info("geo: " + JSON.stringify(geo))
+                // 当前geocenter
+                currentCenter = geo.center
+                // 缩放时鼠标点坐标
                 originX = params["originX"]
                 originY = params["originY"]
-                if (originX !== undefined && originY !== undefined) {
-                    // 按鼠标所在位置进行缩放
-                    incrementWidth = initImageOption.width * (1 - zoom);
-                    incrementHeight = initImageOption.height * (1 - zoom);
-                    imageOption.x = initImageOption.x + originX / initImageOption.width * incrementWidth
-                    imageOption.y = initImageOption.y + originY / initImageOption.height * incrementHeight
-                } else {
-                    imageOption.x = initCenter[0] - cx
-                    imageOption.y = cy - initCenter[1]
-                }
-                console.info(geo.aspectScale + "; " + JSON.stringify(geo))
-                console.info(JSON.stringify(imageOption))
+                
+                if (originX != undefined && originY != undefined) {
+                    console.info("在鼠标位置缩放..")
+                    // 中心点偏移
+                    position.left += (initCenter[0] - currentCenter[0]) * (geo.width / position.width) * geo.zoom
 
-                myOption.graphic[0].elements[0].style = imageOption
+                    // 按比例计算偏移
+                    backgroundImage.x = position.left
+                    // backgroundImage.y = position.top
+                    console.info(JSON.stringify(backgroundImage))
+                } else {
+                    console.info("平移..")
+                    // 平移, 中心点坐标实际偏移 * 显示比例
+                    position.left += (initCenter[0] - currentCenter[0]) * (geo.width / position.width)
+                    position.top += (currentCenter[1] - initCenter[1]) * (geo.height / position.height)
+
+                    backgroundImage.x = position.left
+                    backgroundImage.y = position.top
+                }
+
+                // 原有比例的缩放
+                if (geo.zoom != 1) {
+                    position.width = geo.width * geo.zoom
+                    position.height = geo.height * geo.zoom
+
+                    backgroundImage.width = position.width
+                    backgroundImage.height = position.height
+                }
+                //更新echarts配置
                 myChart.setOption(myOption)
             })
         </script>
